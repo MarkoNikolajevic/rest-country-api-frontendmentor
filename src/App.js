@@ -30,26 +30,12 @@ function App() {
 
   // const filterByRegion = [];
 
-  // const getCountries = async () => {
-  //   try {
-  //     const response = await axios.get('https://restcountries.eu/rest/v2/all/');
-  //     console.log(response.data);
-  //     response.data.map((country) => {
-  //       console.log(country.flag);
-  //       return country;
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <>
         <GlobalStyles />
         <div className='App'>
-          <Navbar toggleTheme={toggleTheme} />
-          <form action=''></form>
+          <Navbar toggleTheme={toggleTheme} theme={theme} />
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mx-12 my-8'>
             {countries.map((country) => {
               return <CountryCard country={country} key={country.name} />;
