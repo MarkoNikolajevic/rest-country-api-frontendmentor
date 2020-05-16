@@ -15,10 +15,30 @@ body {
 }
 
 .navbar {
-  background: ${({ theme }) => theme.elements}
+  background: ${({ theme }) => theme.elements};
+}
+
+.search-by-name {
+  background: ${({ theme }) => theme.elements};
+  height: ${({ theme }) => theme.inputHeight}
+}
+
+.search-by-name::placeholder {
+  opacity: 1;
+  color: ${({ theme }) => theme.text};
+}
+
+.search-icon {
+  position: absolute;
+  transform: translate(20px, 15px);
+}
+
+.search-by-region {
+  background: ${({ theme }) => theme.elements};
+  height: ${({ theme }) => theme.inputHeight};
 }
 
 .country-card {
-  background: ${({ theme }) => theme.elements}
+  background: ${({ theme }) => theme.elements};
 }
 `;
