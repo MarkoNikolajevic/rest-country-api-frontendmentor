@@ -47,6 +47,12 @@ function App() {
     setFilterByName(event.target.value);
   };
 
+  const filteredByName = !filterByName
+    ? countries
+    : countries.filter((country) =>
+        country.name.toLowerCase().includes(filterByName.toLowerCase())
+      );
+
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <>
@@ -66,7 +72,7 @@ function App() {
                 onChange={handleChange}
               />
             </div>
-            <div className='costum-select inline-block relative w-64'>
+            <div className='costum-select inline-block relative w-50'>
               <select className='search-by-region block appearance-none w-full px-4 py-2 pr-8 rounded-md shadow-lg focus:outline-none focus:shadow-outline'>
                 <option
                   value='all'
@@ -93,11 +99,14 @@ function App() {
             </div>
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mx-12 my-8'>
-            {countries.map((country) => {
+            {filteredByName.map((country) => {
               if (filterByRegion === 'all') {
                 return <CountryCard country={country} key={country.name} />;
               }
-              if (country.region === filterByRegion) {
+              if (
+                country.region === filterByRegion ||
+                country.name === filterByName
+              ) {
                 return <CountryCard country={country} key={country.name} />;
               }
               return true;
