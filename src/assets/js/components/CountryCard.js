@@ -8,10 +8,15 @@ const CountryCard = ({ country }) => {
         alt={country.name}
         className='mb-5 rounded-t-md'
       />
-      <div className='country-info pl-8 mb-10'>
+      <div className='country-info pl-4 mb-10'>
         <h4 className='country-name mb-5 tracking-wide'>{country.name}</h4>
         <p className='label tracking-wider'>
-          Population: <span>{country.population}</span>
+          Population:{' '}
+          <span>
+            {country.population
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+          </span>
         </p>
         <p className='label tracking-wider'>
           Region: <span>{country.region}</span>
