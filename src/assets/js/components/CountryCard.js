@@ -1,5 +1,4 @@
 import React from 'react';
-import DetailsPage from './DetailsPage';
 
 const CountryCard = ({ country }) => {
   return (
