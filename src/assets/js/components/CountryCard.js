@@ -1,8 +1,15 @@
 import React from 'react';
+import DetailsPage from './DetailsPage';
 
 const CountryCard = ({ country }) => {
   return (
-    <div className='country-card rounded-md shadow-lg'>
+    <div
+      className='country-card rounded-md shadow-lg'
+      onClick={() => {
+        console.log(country.name.toLowerCase().replace(/\s/g, ''));
+        /* window.location.href = country.name.toLowerCase().replace(/\s/g, ''); */
+      }}
+    >
       <img
         src={country.flag}
         alt={country.name}

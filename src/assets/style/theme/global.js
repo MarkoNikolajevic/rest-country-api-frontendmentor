@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
 body {
   background: ${({ theme }) => theme.body};
   color: ${({ theme }) => theme.text};
-  transition: all 200ms ease-in-out;
+  transition: all 100ms linear;
 }
 
 .navbar {

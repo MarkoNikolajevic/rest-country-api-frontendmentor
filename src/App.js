@@ -43,6 +43,7 @@ function App() {
     }
   };
 
+  // filter by name
   const handleChange = (event) => {
     setFilterByName(event.target.value);
   };
@@ -55,10 +56,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
-      <>
-        <GlobalStyles />
-        <div className='App'>
-          <Navbar toggleTheme={toggleTheme} theme={theme} />
+      <GlobalStyles />
+      <div className='App'>
+        <Navbar toggleTheme={toggleTheme} theme={theme} />
+        <div>
           <div className='filter-inputs mx-8'>
             <div className='search-wrapper my-8'>
               <span className='search-icon'>
@@ -98,7 +99,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mx-12 my-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-12 my-8'>
             {filteredByName.map((country) => {
               if (filterByRegion === 'all') {
                 return <CountryCard country={country} key={country.name} />;
@@ -114,7 +115,7 @@ function App() {
           </div>
           <DetailsPage countries={countries} />
         </div>
-      </>
+      </div>
     </ThemeProvider>
   );
 }
