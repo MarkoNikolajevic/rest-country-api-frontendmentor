@@ -41,4 +41,12 @@ body {
 .country-card {
   background: ${({ theme }) => theme.elements};
 }
+
+.back-btn {
+  background: ${({ theme }) => theme.elements}
+}
+
+.back-btn:hover {
+  transform: scale(1.05)
+}
 `;

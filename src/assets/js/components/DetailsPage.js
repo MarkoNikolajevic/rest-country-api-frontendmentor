@@ -2,20 +2,15 @@ import React from 'react';
 
 const DetailsPage = ({ countries }) => {
   return (
-    <div>
-      <button>
+    <div className='m-8'>
+      <button
+        className='back-btn flex justify-center items-center w-24 h-10 rounded-md shadow-lg transition-transform duration-200 ease-in-out'
+        onClick={() => window.history.back()}
+      >
         <ion-icon name='arrow-back-outline'></ion-icon>
-        Back
+        <span className='ml-3'>Back</span>
       </button>
-      <div className='country-detail'>
-        {/* {countries.map((country) => {
-          return (
-            <div className='inner' key={country.name}>
-              <img src={country.flag} alt={country.name} />
-            </div>
-          );
-        })} */}
-      </div>
+      <div className='country-detail'></div>
     </div>
   );
 };
