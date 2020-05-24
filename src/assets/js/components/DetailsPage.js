@@ -3,8 +3,10 @@ import { useParams } from 'react-router-dom';
 
 const DetailsPage = ({ countries }) => {
   let { countryName } = useParams();
-  const selectedCountry = countries.find(
-    (country) => country.name === countryName
+  let selectedCountry = countries.find(
+    (country) =>
+      country.name.toLowerCase().replace(/\s/g, '') ===
+      countryName.toLowerCase().replace(/\s/g, '')
   );
 
   return (

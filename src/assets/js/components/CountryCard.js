@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const CountryCard = ({ country }) => {
   return (
     <div className='country-card transition-transform duration-200 ease-in-out cursor-pointer rounded-md shadow-lg'>
-      <Link to={`${country.name}`}>
+      <Link to={`${country.name.toLowerCase().replace(/\s/g, '')}`}>
         {/* {`${country.name.toLowerCase().replace(/\s/g, '')}`} */}
         <img
           src={country.flag}
