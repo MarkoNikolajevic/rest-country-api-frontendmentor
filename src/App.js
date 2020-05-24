@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './assets/style/App.scss';
 import axios from 'axios';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // theme toggle tutorial from this article https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/
 import { ThemeProvider } from 'styled-components';
@@ -36,17 +37,24 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <GlobalStyles />
-      <div className='App'>
+      <Router>
         <Navbar toggleTheme={toggleTheme} theme={theme} />
-        <Home
-          countries={countries}
-          filterByName={filterByName}
-          setFilterByName={setFilterByName}
-          filterByRegion={filterByRegion}
-          setFilterByRegion={setFilterByRegion}
-        />
-        <DetailsPage countries={countries} />
-      </div>
+        <Switch>
+          <Route exact path='/'>
+            <Home
+              countries={countries}
+              filterByName={filterByName}
+              setFilterByName={setFilterByName}
+              filterByRegion={filterByRegion}
+              setFilterByRegion={setFilterByRegion}
+            />
+          </Route>
+          <Route
+            path='/:countryName'
+            children={<DetailsPage countries={countries} />}
+          />
+        </Switch>
+      </Router>
     </ThemeProvider>
   );
 }

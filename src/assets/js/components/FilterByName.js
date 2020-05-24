@@ -14,7 +14,7 @@ const FilterByName = ({ filterByName, setFilterByName }) => {
       <input
         type='text'
         placeholder='Search for a country...'
-        className='search-by-name px-16 rounded-md shadow-lg w-full'
+        className='search-by-name px-16 rounded-md shadow-lg w-full h-12'
         value={filterByName}
         onChange={handleChange}
       />
