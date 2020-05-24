@@ -8,6 +8,8 @@ import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './assets/style/theme/theme';
 import { GlobalStyles } from './assets/style/theme/global';
 
+import ScrollToTop from './assets/js/components/ScrollToTop';
+
 import Navbar from './assets/js/components/Navbar';
 import Home from './assets/js/components/Home';
 import DetailsPage from './assets/js/components/DetailsPage';
@@ -38,6 +40,7 @@ function App() {
     <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Router>
+        <ScrollToTop />
         <Navbar toggleTheme={toggleTheme} theme={theme} />
         <Switch>
           <Route exact path='/'>
