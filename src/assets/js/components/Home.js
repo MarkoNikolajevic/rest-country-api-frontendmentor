@@ -18,7 +18,7 @@ const Home = ({
       );
   return (
     <>
-      <div className='filter-inputs mx-8'>
+      <div className='filter-inputs mx-8 lg:mx-16'>
         <FilterByName setFilterByName={setFilterByName} />
         <FilterByRegion
           countries={countries}
