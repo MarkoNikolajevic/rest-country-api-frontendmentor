@@ -24,7 +24,7 @@ const FilterByRegion = ({ countries, setFilterByRegion }) => {
           {uniqueRegion.map((region) => {
             return (
               <option
-                region={region}
+                /* region={region} */
                 value={region}
                 key={region}
                 onClick={(e) => setFilterByRegion(e.target.value)}
