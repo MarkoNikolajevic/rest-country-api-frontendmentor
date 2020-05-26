@@ -17,6 +17,7 @@ const FilterByName = ({ filterByName, setFilterByName }) => {
         className='search-by-name px-16 rounded-md shadow-lg w-full h-12'
         value={filterByName}
         onChange={handleChange}
+        aria-label='Search country by name'
       />
     </div>
   );

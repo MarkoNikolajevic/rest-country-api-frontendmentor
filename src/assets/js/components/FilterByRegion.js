@@ -14,7 +14,10 @@ const FilterByRegion = ({ countries, setFilterByRegion }) => {
   return (
     <div className='lg:mt-8'>
       <div className='costum-select inline-block relative w-50'>
-        <select className='cursor-pointer search-by-region block appearance-none w-full h-12 px-4 py-2 pr-8 rounded-md shadow-lg focus:outline-none focus:shadow-outline'>
+        <select
+          className='cursor-pointer search-by-region block appearance-none w-full h-12 px-4 py-2 pr-8 rounded-md shadow-lg focus:outline-none focus:shadow-outline'
+          aria-label='Filter countries by region'
+        >
           <option
             value='all'
             onClick={(e) => setFilterByRegion(e.target.value)}
