@@ -27,7 +27,7 @@ const Home = ({
           />
         </div>
       </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mx-12 lg:mx-16 my-8'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-12 lg:mx-16 my-8'>
         {filteredByName.map((country) => {
           if (filterByRegion === 'all') {
             return <CountryCard country={country} key={country.name} />;

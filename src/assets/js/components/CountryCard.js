@@ -10,7 +10,7 @@ const CountryCard = ({ country }) => {
         <img
           src={country.flag}
           alt={country.name}
-          className='mb-5 rounded-t-md'
+          className='country-flag mb-5 rounded-t-md'
         />
         <div className='country-info pl-4 mb-10'>
           <h4 className='font-extrabold mb-5 tracking-wide'>{country.name}</h4>
